@@ -1,0 +1,28 @@
+{{define "admin_accommodaties"}}
+{{template "base" .}}
+
+{{block "content" .}}
+<div class="container">
+  <h1>Beheer Accommodaties</h1>
+
+  <form method="POST" action="/admin/accommodaties" class="form-box">
+    <label for="naam">Accommodatie naam:</label>
+    <input type="text" name="naam" id="naam" required />
+
+    <div class="button-group">
+      <button type="submit" name="actie" value="toevoegen">Toevoegen</button>
+      <button type="submit" name="actie" value="verwijderen" class="danger">Verwijderen</button>
+    </div>
+  </form>
+
+  <h2>Bestaande accommodaties</h2>
+  <ul class="accommodatie-lijst">
+    {{range .}}
+      <li>{{.}}</li>
+    {{else}}
+      <li>Geen accommodaties gevonden.</li>
+    {{end}}
+  </ul>
+</div>
+{{end}}
+{{end}}

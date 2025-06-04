@@ -1,0 +1,12 @@
+{{define "accommodaties"}}
+{{template "base" .}}
+
+{{block "content" .}}
+<div class="container">
+  <h1>Onze Accommodaties</h1>
+  <ul class="accommodatie-lijst">
+    {{range .}}<li>{{.}}</li>{{else}}<li>Geen accommodaties beschikbaar.</li>{{end}}
+  </ul>
+</div>
+{{end}}
+{{end}}

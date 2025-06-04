@@ -1,0 +1,27 @@
+{{template "base" .}}
+{{define "base"}}
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fonteyn vakantiepark</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Fonteyn vakantiepark</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/accommodaties">Accommodaties</a>
+            <a href="/reserveren">Reserveren</a>
+            <a href="/over">Over ons</a>
+            <a href="/contact">Contact</a>
+        </nav>
+    </header>
+    <main>
+        {{ block "content" . }}{{ end }}
+    </main>
+</body>
+</html>
+{{end}}

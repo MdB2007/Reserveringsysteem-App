@@ -1,0 +1,37 @@
+{{define "admin_reserveringen"}}
+{{template "base" .}}
+
+{{block "content" .}}
+<div class="container">
+  <h1>Overzicht reserveringen</h1>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Naam</th>
+        <th>Begin datum</th>
+        <th>Eind datum</th>
+        <th>Kenteken</th>
+        <th>Email</th>
+        <th>Telefoon</th>
+        <th>Accommodatie</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{range .}}
+      <tr>
+        <td>{{.ID}}</td>
+        <td>{{.Voornaam}} {{.Tussenvoegsel}} {{.Achternaam}}</td>
+        <td>{{.BeginDatum}}</td>
+        <td>{{.EindDatum}}</td>
+        <td>{{.Kenteken}}</td>
+        <td>{{.Email}}</td>
+        <td>{{.Telefoon}}</td>
+        <td>{{.Accommodatie}}</td>
+      </tr>
+      {{end}}
+    </tbody>
+  </table>
+</div>
+{{end}}
+{{end}}

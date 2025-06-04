@@ -1,0 +1,8 @@
+{{template "base" .}}
+{{ define "content" }}
+<h2>Beheerderslogin</h2>
+<form method="POST" action="/admin/login">
+    <label>Wachtwoord: <input type="password" name="wachtwoord" required></label><br>
+    <button type="submit">Inloggen</button>
+</form>
+{{ end }}

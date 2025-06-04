@@ -1,0 +1,27 @@
+services:
+  go-app:
+    build: .
+    container_name: go-app
+    networks:
+      - appnet
+    environment:
+      - ADMIN_WACHTWOORD=beheer123
+    platform: linux/amd64
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - 80:80
+      - 443:443
+    restart: always
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./static:/usr/share/nginx/html/static
+      - ./nginx/certs:/etc/nginx/certs
+    depends_on:
+      - go-app
+    networks:
+      - appnet
+
+networks:
+  appnet:

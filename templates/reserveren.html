@@ -1,0 +1,46 @@
+{{define "reserveren"}}
+{{template "base" .}}
+
+{{block "content" .}}
+<div class="container">
+  <h1>Reserveren</h1>
+  <form method="POST" action="/reserveren">
+    
+    <label>Voornaam:</label>
+    <input type="text" name="voornaam" required />
+
+    <label>Tussenvoegsel:</label>
+    <input type="text" name="tussenvoegsel" />
+
+    <label>Achternaam:</label>
+    <input type="text" name="achternaam" required />
+
+    <label>Begindatum:</label>
+    <input type="date" name="begindatum" min="{{.Vandaag}}" required />
+
+    <label>Einddatum:</label>
+    <input type="date" name="einddatum" min="{{.Vandaag}}" required />
+
+    <label>Emailadres:</label>
+    <input type="email" name="email" required />
+
+    <label>Telefoonnummer:</label>
+    <input type="tel" name="telefoon" required />
+
+    <label>Kenteken:</label>
+    <input type="text" name="kenteken" required />
+
+    <label>Accommodatie:</label>
+    <select name="accommodatie" required>
+    {{range .Accommodaties}}
+    <option>{{.}}</option>
+    {{else}}
+    <option disabled>Geen accommodaties beschikbaar</option>
+    {{end}}
+  </select>
+
+    <button type="submit">Verstuur</button>
+  </form>
+</div>
+{{end}}
+{{end}}
