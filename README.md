@@ -55,7 +55,7 @@ project/
 
 ---
 
-## 🧮 Benodigde SQL Queries (Database setup)
+## Benodigde SQL Queries (Database setup)
 
 Voer deze queries uit in je MySQL-database om de tabellen correct aan te maken:
 
